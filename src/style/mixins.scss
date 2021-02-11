@@ -17,3 +17,31 @@
         background-color: $dark-teal;
     }
 }
+
+@mixin input-element {
+    input {
+        font-family: "Titillium Web", sans-serif;
+        color: $charcoal;
+        padding: 5px 0px;
+        width: 100%;
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        border-bottom: 1px solid $teal;
+        background-color: transparent;
+        transition: 0.5 all ease-in-out;
+        font-size: 1.1em;
+        margin-bottom: 21px;
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid $dark-teal;
+        }
+    }
+}
+
+//This is the code below I refactored because I was rewriting display: grid and grid-gap: 21px a lot.
+@mixin base-grid() {
+    display: grid;
+    grid-gap: 21px;
+}

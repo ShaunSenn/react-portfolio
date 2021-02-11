@@ -1,0 +1,16 @@
+.portfolio-form-wrapper {
+    @include base-grid();//this is a mixin i created because I was calling display: grid and grid-gap: 21px over and over again.
+    grid-template-columns: 1fr;
+    padding: 42px;
+
+    @include input-element();
+    input {
+        margin-bottom: 0px;
+    }
+
+    //below code is optional for the image uploader fields. they did stretch across the page before this was implemented.
+    .image-uploaders {
+        @include base-grid();
+        grid-template-columns: 200px 200px 200px;
+    }
+}

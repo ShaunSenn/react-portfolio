@@ -1,0 +1,20 @@
+//Create a few base classes
+
+.one-column {
+    @include base-grid();
+    grid-template-columns: 1fr;
+}
+
+.two-column {
+    @include base-grid();
+    grid-template-columns: 1fr 1fr;
+}
+
+// Code below was used when I had my image uploader fields stretching
+// across the entire page
+
+// .three-column {
+//     display: grid;
+//     grid-template-columns:  1fr 1fr 1fr;
+//     grid-gap: 21px;
+// }

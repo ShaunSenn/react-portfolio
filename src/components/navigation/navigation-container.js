@@ -1,6 +1,6 @@
 import React from "react";
-import axios from "axios";
-import { withRouter } from "react-router";
+import axios from "axios"; //needed to communicate with the logout endpoint
+import { withRouter } from "react-router"; //higher order component: let's me wrap up functionality based on react compositional nature
 import { NavLink } from "react-router-dom";
 
 const NavigationComponent = props => {
@@ -16,9 +16,9 @@ const NavigationComponent = props => {
 
   const handleSignOut = () => {
     axios
-      .delete("https://api.devcamp.space/logout", { withCredentials: true })
-      .then(response => {
-        if (response.status === 200) {
+    .delete("https://api.devcamp.space/logout", { withCredentials: true })
+    .then(response => {
+        if (response.status === 200) { //200 Status is returned when something is deleted properly on a properly built API
           props.history.push("/");
           props.handleSuccessfulLogout();
         }

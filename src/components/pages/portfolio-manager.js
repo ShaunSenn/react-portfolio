@@ -15,11 +15,15 @@ export default class PortfolioManager extends Component {
         this.handleSuccessfulFormSubmission = this.handleSuccessfulFormSubmission.bind(this);
         this.handleFormSubmissionError = this.handleFormSubmissionError.bind(this);
     }
-
+// The following code is a way to create a single element array 
+// that I concatinate to another array, portfolioItems, so the 
+// single element array gets stacked on top, rather than being
+// pushed to the bottom like push would do. I do this to have the
+// behavior where when I add a record it gets stacked on top
     handleSuccessfulFormSubmission(portfolioItem) {
-        //TODO
-        //update portfolioItems state
-        //and add the portfolioItem to the list
+        this.setState({
+            portfolioItems: [portfolioItem].concat(this.state.portfolioItems)
+        });
     }
 
     handleFormSubmissionError(error) {
@@ -27,7 +31,7 @@ export default class PortfolioManager extends Component {
     }
 
     getPortfolioItems() {
-        axios.get("https://shaunsenn.devcamp.space/portfolio/portfolio_items", { 
+        axios.get("https://shaunsenn.devcamp.space/portfolio/portfolio_items?order_by=created_at&direction=desc", { 
             withCredentials: true
         })
         .then(response => {
