@@ -25,7 +25,7 @@ export default class PortfolioItem extends Component {
   //!!REMEMBER!! class components need a render method
 render(){
   const {id, description, thumb_image_url, logo_url} = this.props.item;
-  //destructuring is being done on line 15
+  //destructuring is being done on line 27
   return (
     <div className="portfolio-item-wrapper"
     onMouseEnter={() => this.handleMouseEnter()}

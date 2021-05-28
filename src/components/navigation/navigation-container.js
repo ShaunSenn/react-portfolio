@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios"; //needed to communicate with the logout endpoint
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { withRouter } from "react-router"; //higher order component: let's me wrap up functionality based on react compositional nature
 import { NavLink } from "react-router-dom";
 
@@ -64,7 +65,9 @@ const NavigationComponent = props => {
       <div className="right-side">
         SHAUN SENN
         {props.loggedInStatus === "LOGGED_IN" ? (
-          <a onClick={handleSignOut}>Sign Out</a>
+          <a onClick={handleSignOut}>
+            <FontAwesomeIcon icon="sign-out-alt"/>
+          </a>
         ) : null}
       </div>
     </div>
