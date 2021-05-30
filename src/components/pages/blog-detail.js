@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import ReactHtmlParser from "react-html-parser";
+
 import BlogForm from '../blog/blog-form';
 import BlogFeaturedImage from '../blog/blog-featured-image';
 
@@ -12,7 +13,7 @@ export default class BlogDetail extends Component {
         this.state = {
             currentId: this.props.match.params.slug,
             blogItem: {},
-            editMode: false
+            editMode: false //this is our piece of state so we and the component can monitor if we're in edit mode or if we're just in regular view mode
         };
 
         this.handleEditClick = this.handleEditClick.bind(this);
@@ -34,8 +35,11 @@ export default class BlogDetail extends Component {
             }
         })
     }
+
     handleEditClick(){
-        this.setState({ editMode: true });
+        if (this.props.loggedInStatus === "LOGGED_IN"){
+            this.setState({ editMode: true });
+        }
     }
 
 getBlogItem() {
@@ -63,11 +67,12 @@ render() {
 
 const contentManager = () => {
     if (this.state.editMode) {
-        return <BlogForm         
+        return <BlogForm
         handleFeaturedImageDelete={this.handleFeaturedImageDelete} 
         handleUpdateFormSubmission={this.handleUpdateFormSubmission}
         editMode={this.state.editMode} 
-        blog={this.state.blogItem} />;
+        blog={this.state.blogItem} 
+        />;
         } else {
             return (
                 <div className="content-container">
@@ -81,8 +86,6 @@ const contentManager = () => {
         }
     };
         
-        return (
-            <div className="blog-container">{contentManager()}</div>
-        );
+        return ( <div className="blog-container">{contentManager()}</div> );
     }
 }
