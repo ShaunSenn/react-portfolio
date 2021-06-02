@@ -27,7 +27,9 @@ render(){
   const {id, description, thumb_image_url, logo_url} = this.props.item;
   //destructuring is being done on line 27
   return (
-    <div className="portfolio-item-wrapper"
+    <Link to={`/portfolio/${id}`}>
+    <div 
+    className="portfolio-item-wrapper"
     onMouseEnter={() => this.handleMouseEnter()}
     onMouseLeave={() => this.handleMouseLeave()}
     >
@@ -47,6 +49,7 @@ render(){
         <div className="subtitle">{description}</div>
       </div>
     </div>
+    </Link>
   );
   }
 }

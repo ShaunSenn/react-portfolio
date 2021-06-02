@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
 import BlogForm from "../blog/blog-form";
+import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 ReactModal.setAppElement(".app-wrapper");
@@ -29,6 +31,8 @@ export default class BlogModal extends Component {
     handleSuccessfulFormSubmission(blog) {
         this.props.handleSuccessfulNewBlogSubmission(blog);
     }
+
+    
     render() {
         return(
             <ReactModal 
