@@ -19,7 +19,7 @@ const NavigationComponent = props => {
     axios
     .delete("https://api.devcamp.space/logout", { withCredentials: true })
     .then(response => {
-        if (response.status === 200) { //200 Status is returned when something is deleted properly on a properly built API
+        if (response.status === 200) {
           props.history.push("/");
           props.handleSuccessfulLogout();
         }

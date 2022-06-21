@@ -14,7 +14,7 @@ export default function() {
         />
 
         <div className="right-column">
-            BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! BIO, LIST OF SKILLS! 
+            BIO, LIST OF SKILLS! 
         </div>
     </div>
     );

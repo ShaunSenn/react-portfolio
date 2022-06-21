@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
+//Lines 5,6,7 for spotify
+// import hash from "./hash";
+// import logo from "./logo.svg";
+// import "./App.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
